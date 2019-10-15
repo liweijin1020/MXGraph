@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Word MxGraph!</title>
+    <script type="text/javascript">
+        mxBasePath = '../javascript/src';
+    </script>
+    <script type="text/javascript" src="../javascript/src/js/mxClient.js"></script>
+
+    <script type="text/javascript">
+        function main(container) {
+            // 判断浏览器是否支持
+            if (!mxClient.isBrowserSupported()) {
+                mxUtils.error('Browser is not supported!', 200, false);
+            } else {
+                // 1 创建一个MXGraph中的graph实例，graph可以理解为我们绘制图形的实例对象。
+                var graph = new mxGraph(container);
+                new mxRubberband(graph);
+                // 2 获取当前图层之上的父图层
+                var parent = graph.getDefaultParent();
+                // 3 每次新增图形，或者更新图形的时候必须要调用这个方法
+                graph.getModel().beginUpdate();
+                try {
+                    // 这条语句在图层中绘制出一个内容为'Hello'的矩形
+                    // insertVertex()函数中依次传入的是父图层，当前图元的id，图元中的内容，定位x，定位y，宽w，高h，后面还可以添加参数为当前图源的样式，是否为相对位置
+                    var v1 = graph.insertVertex(parent, null, 'Hello,', 20, 20, 80, 30);
+                    var v2 = graph.insertVertex(parent, null, 'World!', 200, 150, 80, 30);
+                    // 这条语句使用insertEdge，在图层中绘制出一个由v1指向v2的线。
+                    var e1 = graph.insertEdge(parent, null, '', v1, v2);
+                } finally {
+                    // 每次更新或者新增图形之后必须调用这个方法，所以这个方法需要在finally中执行
+                    graph.getModel().endUpdate();
+                }
+            }
+        };
+    </script>
+
+</head>
+<body onload="main(document.getElementById('graphContainer'))">
+<div id="graphContainer"
+     style="position:relative;overflow:hidden;width:1021px;height:1041px;background:url('../javascript/examples/editors/images/grid.gif');cursor:default;">
+</div>
+</body>
+</html>
