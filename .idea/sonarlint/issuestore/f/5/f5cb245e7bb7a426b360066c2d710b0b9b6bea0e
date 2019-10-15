@@ -1,0 +1,10 @@
+
+[squid:UselessImportCheck"0Remove this unused import 'java.io.PrintWriter'.(ÓÞÏÛ8–Å°ÖÜ-
+Dsquid:S1989a"&Add a "try/catch" block for "forward".(êèåž8ü¿›ÔÜ-
+Hsquid:S1989"%Add a "try/catch" block for "doPost".(éöõ¦ùÿÿÿÿ8°ÎøÓÜ-
+Dsquid:S1989a"&Add a "try/catch" block for "forward".(êèåž8ü¿›ÔÜ-
+[
+squid:S106T"9Replace this use of System.out or System.err by a logger.(×”îØùÿÿÿÿ8ü¿›ÔÜ-
+Hsquid:S1989"%Add a "try/catch" block for "doPost".(éöõ¦ùÿÿÿÿ8°ÎøÓÜ-
+\squid:S1155K">Use isEmpty() to check whether the collection is empty or not.(ý®Œþ8ü¿›ÔÜ-
+Qsquid:S1989$"3Add a "try/catch" block for "setCharacterEncoding".(ï‡‹ê8Ü÷‚ÔÜ-
